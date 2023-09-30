@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .video-container {
+            display: flex;
+        }
+        .video-container > div {
+            flex-grow: 1;
+            position: relative;
+            max-width: 50%; /* Два видео, поэтому каждое занимает максимум половину ширины */
+        }
+        .video-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <div>
+            <img src="{{ url_for('video_feed') }}">
+        </div>
+        <div>
+            <img src="{{ url_for('video_feed_2') }}">
+        </div>
+    </div>
+</body>
+</html>
